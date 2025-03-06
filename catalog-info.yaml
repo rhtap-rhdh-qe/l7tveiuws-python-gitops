@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: l7tveiuws-python-gitops
+  description: This is GitOps manifest for l7tveiuws-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=l7tveiuws-python
+    backstage.io/kubernetes-id: l7tveiuws-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: l7tveiuws-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:l7tveiuws-python
